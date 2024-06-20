@@ -3,6 +3,7 @@
 use App\Http\Controllers\CadastroController;
 use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BookController;
 
 Route::get('/', function () {
     return view('login');
@@ -23,5 +24,6 @@ Route::post('/register', [CadastroController::class, 'save'])
 Route::get('/dashboard', function () {
     return view('dashboard');
 });
+ Route::get('/dashboard', [BookController::class, 'index']);
 
 

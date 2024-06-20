@@ -7,12 +7,9 @@
 <form method="POST" action="/">
     @csrf
 
-    @if ($errors->all())
-        @foreach ($errors->all() as $erros)
-            <p>{{ $erros }}</p>
-        @endforeach
-    @endif
+
 <section class="container general">
+
 <div class="mb-3">
     <label for="exampleInputName" class="form-label">Nome</label>
     <input type="text" class="form-control" name ="name">
@@ -34,6 +31,13 @@
   <label class="form-check-label" for="exampleCheck1">Lembre-se de mim</label>
 </div>
 <button type="submit" class="btn btn-primary">Logar</button>
+
+    @if ($errors->all())
+        @foreach ($errors->all() as $erros)
+            <p>{{ $erros }}</p>
+        @endforeach
+    @endif
+    
 </section>
 </form>
 @endsection

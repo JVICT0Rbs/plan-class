@@ -18,7 +18,7 @@ class CadastroController extends Controller
         ->validate();
         User::create($request->except("_token"));
         Auth::attempt(['email' => $request->email, 'password' => $request->password]);
-        return redirect("/dashboard");
+        return redirect("/");
     }
 }
 

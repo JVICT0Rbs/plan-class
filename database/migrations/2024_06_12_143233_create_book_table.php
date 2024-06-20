@@ -12,10 +12,16 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('book', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
+            $table->unsignedBigInteger('id_user')->unsigned();
+            $table->foreign('id_user')->references('id')->on(table:'users')->onDelete('cascade')->onUpdate('cascade');
+            $table->string('autor');
+            $table->string('titulo');
+            $table->string('subtitulo')->nullable();
+            $table->string('edição');
+            $table->string('editora');
+            $table->integer('ano_da_publicação');
             $table->timestamps();
-            $table->string('name');
-            $table->integer('edition');
         });
     }
 
