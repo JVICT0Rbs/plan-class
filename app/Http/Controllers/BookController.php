@@ -20,6 +20,7 @@ class BookController extends Controller
 
     public function index()
     {
-    dd($this->objUser->find(10)->relBooks);
+        $books=$this->objBook->all();
+        return view('dashboard', ['books'=> $books]);
     }
 }

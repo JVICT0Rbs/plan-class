@@ -15,8 +15,13 @@
                 <th scope="col">PUBLIÇÃO</th>
               </tr>
             </thead>
+
+            @foreach ($books as $books)
+                {{ $book->title }}
+            @endforeach
+
             <tbody class="table-group-divider">
-                
+
               <tr>
                 <th scope="row">1</th>
                 <td>Mark</td>
