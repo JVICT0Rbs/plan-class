@@ -2,7 +2,10 @@
 @section('Title', 'DashBoard')
 
 @section('content')
+
+
     <div class="col-8 m_auto">
+
         <table class="table">
             <thead>
               <tr>
@@ -17,28 +20,19 @@
             </thead>
 
             @foreach ($books as $books)
-                {{ $book->title }}
+            <tr>
+                <th scope="row">{{$books->id}}</th>
+                <td>{{$books->autor}}</td>
+                <td>{{$books->titulo}}</td>
+                <td>{{$books->subtitulo}}</td>
+                <td>{{$books->edição}}</td>
+                <td>{{$books->editora}}</td>
+                <td>{{$books->ano_da_publicação}}</td>
+              </tr>
             @endforeach
 
             <tbody class="table-group-divider">
 
-              <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td colspan="2">Larry the Bird</td>
-                <td>@twitter</td>
-              </tr>
             </tbody>
           </table>
     </div>

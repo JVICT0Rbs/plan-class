@@ -13,7 +13,7 @@ class Book extends Model
         'autor',
         'titulo',
         'subtitulo',
-        'ediçãpo',
+        'edição',
         'editora',
         'ano_da_publicação',
     ];
