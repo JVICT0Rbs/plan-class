@@ -27,3 +27,9 @@ Route::get('/dashboard', function () {
  Route::get('/dashboard', [BookController::class, 'index']);
 
 
+ Route::get('{{/dashboard/$books->id}}', function () {
+    return view('dashboard');
+
+ });
+
+Route::get('/book/{id}',[BookController::class,'show']);

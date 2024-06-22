@@ -23,4 +23,11 @@ class BookController extends Controller
         $books=$this->objBook->all();
         return view('dashboard', ['books'=> $books]);
     }
+
+    public function show($id)
+{
+    echo $id;
+}
+
+
 }

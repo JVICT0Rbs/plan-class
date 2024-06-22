@@ -3,6 +3,11 @@
 
 @section('content')
 
+  <div class="text-center">
+      <a href="">
+        <button class="btn btn-success">Cadastrar</button>
+      </a>
+  </div>
 
     <div class="col-8 m_auto">
 
@@ -16,6 +21,7 @@
                 <th scope="col">EDIÇÃO</th>
                 <th scope="col">EDITORA</th>
                 <th scope="col">PUBLIÇÃO</th>
+                <th scope="col">AÇÕES</th>
               </tr>
             </thead>
 
@@ -28,6 +34,20 @@
                 <td>{{$books->edição}}</td>
                 <td>{{$books->editora}}</td>
                 <td>{{$books->ano_da_publicação}}</td>
+                <td>
+                  <a href="{{url("book/$books->id")}}">
+                      <button class="btn btn-dark">Visualizar</button>
+                  </a>
+
+                  <a href="">
+                      <button class="btn btn-primary">Editar</button>
+                  </a>
+
+                  <a href="">
+                      <button class="btn btn-danger">Deletar</button>
+                  </a>
+
+                </td>
               </tr>
             @endforeach
 
