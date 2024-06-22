@@ -21,7 +21,7 @@ class BookController extends Controller
 
     public function index()
     {
-        $books=$this->objBook->all();
+        $books= $this->objBook->where ('id_user', Auth::id())-> get();
         return view('dashboard', ['books'=> $books]);
     }
 
