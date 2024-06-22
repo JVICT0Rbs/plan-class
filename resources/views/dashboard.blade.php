@@ -4,7 +4,7 @@
 @section('content')
 
   <div class="text-center">
-      <a href="">
+      <a href="{{url('dashboard/create')}}">
         <button class="btn btn-success">Cadastrar</button>
       </a>
   </div>

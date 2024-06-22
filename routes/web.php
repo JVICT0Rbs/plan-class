@@ -33,3 +33,7 @@ Route::get('/dashboard', function () {
  });
 
 Route::get('/book/{id}',[BookController::class,'show']);
+
+Route::get('dashboard/create', [BookController::class, 'create']);
+
+Route::post('books/create', [BookController::class, 'store']);
