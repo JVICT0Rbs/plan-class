@@ -50,4 +50,30 @@ public function store(Request $request)
     return redirect ("/dashboard");
 }
 
+public function edit($id)
+{
+    $book = $this->objBook->find($id);
+    return view('edit', compact('book'));
+}
+
+public function update(Request $request, $id)
+{
+    $this->objBook->where(['id'=>$id])->update([
+        'titulo'=>$request->titulo,
+        'subtitulo'=>$request->subtitulo,
+        'autor'=>$request->autor, 
+        'edição'=>$request->edição,
+        'editora'=>$request->editora,
+        'ano_da_publicação'=>$request->ano_da_publicação,
+  
+    ]);
+    return redirect('dashboard');
+}
+
+public function destroy($id)
+{
+    $this->objBook->destroy($id);
+    return redirect('dashboard');
+}
+
 }

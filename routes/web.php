@@ -37,3 +37,9 @@ Route::get('/book/{id}',[BookController::class,'show']);
 Route::get('dashboard/create', [BookController::class, 'create']);
 
 Route::post('books/create', [BookController::class, 'store']);
+
+Route::get('edit/{id}', [BookController::class, 'edit']);
+
+Route::put('/books/{id}', [BookController::class, 'update']);
+
+Route::delete('/delet/{id}', [BookController::class, 'destroy'])->name('delet.book');
