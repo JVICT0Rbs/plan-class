@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Models\Book;
 use App\Models\User;
-
+use Illuminate\Support\Facades\DB;
 class BookController extends Controller
 {
 
@@ -21,8 +21,8 @@ class BookController extends Controller
 
     public function index()
     {
-        $books= $this->objBook->where ('id_user', Auth::id())-> get();
-        return view('dashboard', ['books'=> $books]);
+        $books= $this->objBook->where('id_user', Auth::id())->simplePaginate(5);
+        return view('dashboard')->with("books", $books);
     }
 
     public function show($id)
@@ -74,6 +74,13 @@ public function destroy($id)
 {
     $this->objBook->destroy($id);
     return redirect('dashboard');
+}
+
+public function logout(request $request) {
+    $request->session()->invalidate();
+    $request->session()->regenerateToken();
+
+    return redirect('/');
 }
 
 }

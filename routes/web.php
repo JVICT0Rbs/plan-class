@@ -43,3 +43,5 @@ Route::get('edit/{id}', [BookController::class, 'edit']);
 Route::put('/books/{id}', [BookController::class, 'update']);
 
 Route::delete('/delet/{id}', [BookController::class, 'destroy'])->name('delet.book');
+
+Route::get('/logout', [BookController::class, 'logout']); 

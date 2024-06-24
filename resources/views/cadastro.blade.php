@@ -32,6 +32,10 @@
       <label class="form-check-label" for="exampleCheck1">Lembre-se de mim</label>
     </div>
     <button type="submit" class="btn btn-primary">Cadastrar</button>
+
+    <a href="/">Login</a>
+
+
   </section>
   </form>
 @endsection

@@ -12,9 +12,12 @@
     <div class="col-8 m_auto">
 
         <table class="table">
+
+        <a href="/logout">Logout</a>
+
             <thead>
               <tr>
-                <th scope="col">ID</th>
+                
                 <th scope="col">AUTOR</th>
                 <th scope="col">TÍTULO</th>
                 <th scope="col">SUBTITULO</th>
@@ -24,37 +27,43 @@
                 <th scope="col">AÇÕES</th>
               </tr>
             </thead>
-
-            @foreach ($books as $books)
+            
+            <tbody class="table-group-divider">
+            @foreach ($books as $book)
             <tr>
-                <th scope="row">{{$books->id}}</th>
-                <td>{{$books->autor}}</td>
-                <td>{{$books->titulo}}</td>
-                <td>{{$books->subtitulo}}</td>
-                <td>{{$books->edição}}</td>
-                <td>{{$books->editora}}</td>
-                <td>{{$books->ano_da_publicação}}</td>
-                <td>
-                  <a href="{{url("book/$books->id")}}">
-                      <button class="btn btn-dark">Visualizar</button>
+                
+                <td>{{$book->autor}}</td>
+                <td>{{$book->titulo}}</td>
+                <td>{{$book->subtitulo}}</td>
+                <td>{{$book->edição}}</td>
+                <td>{{$book->editora}}</td>
+                <td>{{$book->ano_da_publicação}}</td>
+                <td class="Bottons">
+                  <a href="{{url("book/$book->id")}}">
+                      <button class="btn btn-dark">Visualizar ID</button>
                   </a>
 
-                  <a href="{{url("edit/$books->id")}}">
+                  <a href="{{url("edit/$book->id")}}">
                       <button class="btn btn-primary">Editar</button>
                   </a>
 
-                  <form action="{{route('delet.book', $books->id)}}" method="POST">
-    @csrf
-    @method('DELETE')
-    <button type="submit" class="btn btn-danger">Deletar</button>
-</form>
+                  <form action="{{route('delet.book', $book->id)}}" method="POST">
+                      @csrf
+                      @method('DELETE')
+                      <button type="submit" class="btn btn-danger">Deletar</button>
+                  </form>
                 </td>
               </tr>
+              
             @endforeach
 
-            <tbody class="table-group-divider">
 
             </tbody>
           </table>
+
+    
+
     </div>
+
+   {{ $books->links() }}
 @endsection
