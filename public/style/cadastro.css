@@ -11,9 +11,9 @@ body{
 .general {
     padding-top: 20px;
     width:400px;
-    height:500px;
+    height:445px;
     background: rgb(255,214,0);
-background: radial-gradient(circle, rgba(255,214,0,0.1680321786917892) 0%, rgba(205,203,196,1) 100%);
+    background: radial-gradient(circle, rgba(255,214,0,0.1680321786917892) 0%, rgba(205,203,196,1) 100%);
     border-radius:15px;
     box-shadow: -13px 13px 5px rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(10px) ;
@@ -32,7 +32,7 @@ background: radial-gradient(circle, rgba(255,214,0,0.1680321786917892) 0%, rgba(
     border: solid;
     border-radius: 7px;
     padding: 10px;
- 
+
 }
 
 .text-center {
@@ -41,5 +41,5 @@ background: radial-gradient(circle, rgba(255,214,0,0.1680321786917892) 0%, rgba(
 
 .Bottons {
     display: flex;
-    text-align: center;  
+    text-align: center;
 }
