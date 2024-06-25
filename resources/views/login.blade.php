@@ -26,10 +26,7 @@
   <input type="password" class="form-control" name="password" placeholder="Mínimo 8 dígitos">
 </div>
 
-<div class="mb-3 form-check">
-  <input type="checkbox" class="form-check-input" id="exampleCheck1">
-  <label class="form-check-label" for="exampleCheck1">Lembre-se de mim</label>
-</div>
+
 <button type="submit" class="btn btn-primary">Logar</button>
 <a href="/register">Cadastrar</a>
 
@@ -41,7 +38,7 @@
             <p>{{ $erros }}</p>
         @endforeach
     @endif
-    
+
 </section>
 </form>
 
