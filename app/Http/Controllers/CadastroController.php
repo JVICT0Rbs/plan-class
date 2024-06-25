@@ -13,7 +13,7 @@ class CadastroController extends Controller
             $user = Validator::make($request->all(), [
             'password' => ['required', 'confirmed', "min:8"],
             'name' => ['required', 'string'],
-            'email' => ['required', 'email']
+            'email' => ['required', 'email', 'unique:users']
         ])
         ->validate();
         User::create($request->except("_token"));
